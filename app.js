@@ -1,5 +1,4 @@
 class Message extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -19,9 +18,12 @@ class Message extends React.Component {
 
     const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt repellendus provident unde maxime recusandae, ea iusto natus fugit autem molestiae expedita similique qui nostrum ut blanditiis! Sunt mollitia fuga fugiat.';
 
+    // Dodajemy logikę zmiany etykiety przycisku
+    const buttonLabel = this.state.messageIsActive ? 'Ukryj' : 'Pokaż';
+
     return (
       <React.Fragment>
-        <button onClick={this.handleMessageButton}>Pokaż</button>
+        <button onClick={this.handleMessageButton}>{buttonLabel}</button>
         {this.state.messageIsActive && <p>{text}</p>}
       </React.Fragment>
     );
